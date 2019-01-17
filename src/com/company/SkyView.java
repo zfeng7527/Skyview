@@ -5,22 +5,22 @@ package com.company;
 public class SkyView {
     public SkyView(int numRows,int numCols,double[] scan) {
         double[][] arr = new double[numRows][numCols];
-        int col = 0, in = -1;
+        int row = 0, in = -1;
         while (in < scan.length-1) {
-            if(col<numCols) {
+            if(row<numRows) {
                 for (int i = 0; i <= numCols - 1; i++) {
                     in++;
-                    arr[col][i] = scan[in];
+                    arr[row][i] = scan[in];
                 }
-                col++;
+                row++;
             }
 
-            if(col<numCols) {
+            if(row<numRows) {
                 for (int j = numCols - 1; j >= 0; j--) {
                     in++;
-                    arr[col][j] = scan[in];
+                    arr[row][j] = scan[in];
                 }
-                col++;
+                row++;
             }
         }
 
