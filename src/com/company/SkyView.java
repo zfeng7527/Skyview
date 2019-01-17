@@ -4,10 +4,13 @@ package com.company;
 
 public class SkyView {
     private double[][] view;
+
+    //this method creates the 2D array.
     public SkyView(int numRows,int numCols,double[] scan) {
         view = new double[numRows][numCols];
         int row = 0, in = -1;
         while (in < scan.length-1) {
+            //Adds the numbers to the array forwardly.
             if(row<numRows) {
                 for (int i = 0; i <= numCols - 1; i++) {
                     in++;
@@ -16,6 +19,7 @@ public class SkyView {
                 row++;
             }
 
+            //Adds the numbers to the array in the opposite order.
             if(row<numRows) {
                 for (int j = numCols - 1; j >= 0; j--) {
                     in++;
@@ -24,7 +28,7 @@ public class SkyView {
                 row++;
             }
         }
-
+        //Prints the array
         for(double[] smallview : view){
             for(double num : smallview){
            System.out.print(num+" ");
